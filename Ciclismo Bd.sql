@@ -3,11 +3,33 @@ USE Ciclismo;
 
 CREATE TABLE Usuarios (
     Id_Usuarios INT AUTO_INCREMENT PRIMARY KEY,
-    Id_Ciclista INT,
-    Id_Juez INT,
-    Id_Administrador INT,
-    Id_Organizador INT
+    Contraseña_U VARCHAR(15),
+    Correo_U     VARCHAR(30),
 );
+
+CREATE PROCEDURE AsignarTipoUsuario
+    @Id_Usuario INT,
+    @Rol VARCHAR(20)
+AS
+BEGIN
+    DECLARE @TipoUsuario INT
+
+    IF @Rol = 'Ciclista'
+        SET @TipoUsuario = 1
+    ELSE IF @Rol = 'Juez'
+        SET @TipoUsuario = 2
+    ELSE IF @Rol = 'Administrador'
+        SET @TipoUsuario = 3
+    ELSE IF @Rol = 'Organizador'
+        SET @TipoUsuario = 4
+
+    UPDATE Usuarios
+    SET Id_Ciclista = CASE WHEN @TipoUsuario = 1 THEN @Id_Usuario ELSE NULL END,
+        Id_Juez = CASE WHEN @TipoUsuario = 2 THEN @Id_Usuario ELSE NULL END,
+        Id_Administrador = CASE WHEN @TipoUsuario = 3 THEN @Id_Usuario ELSE NULL END,
+        Id_Organizador = CASE WHEN @TipoUsuario = 4 THEN @Id_Usuario ELSE NULL END
+    WHERE Id_Usuarios = @Id_Usuario
+END
 
 CREATE TABLE Carrera (
     Id_Carrera INT PRIMARY KEY,
