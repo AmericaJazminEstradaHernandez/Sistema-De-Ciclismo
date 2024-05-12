@@ -30,29 +30,33 @@
   
   .loginDesc {
     font-size: 24px;
-    color: #f5f4f3;
+    color: #f5f4f3d3;
   }
   
   .loginBox{
       height: 300px;
       padding: 20px;
-      background-color: white;
+      background-color: #f5f4f3d3;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
   }
   
-  .loginInput{
-      height: 50px;
-      border-radius: 10px;
-      border: 1px solid gray;
-      font-size: 18px;
-      padding-left: 20px;
+  .loginInput {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #f5f4f3d3;
+    font-size: 18px;
+    padding-left: 20px;
+    background-color: transparent; /* Hacer el fondo transparente */
+    color: #130b0b; /* Color del texto */
+    transition: background-color 0.3s ease; /* Transición suave */
   }
   
-  .loginInput:focus{
-      outline: none;
+  .loginInput:focus {
+    outline: none;
+    background-color: rgba(245, 244, 243, 0.7); /* Fondo semi-transparente al enfocar */
   }
   
   .loginButton{
@@ -60,7 +64,7 @@
       border-radius: 10px;
       border: none;
       background-color: #ee6617;
-      color: white;
+      color: #f5f4f3d3;
       font-size: 20px;
       font-weight: 500;
       cursor: pointer;
@@ -91,7 +95,7 @@
     left: 47%;
     width: 7px;
     height: 80%;
-    background-color: rgb(250, 247, 247);
+    background-color: #f5f4f3d3;
     transform: translateX(-40%);
   }
 
