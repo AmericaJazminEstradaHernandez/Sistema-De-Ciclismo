@@ -3,12 +3,18 @@ USE Ciclismo;
 
 CREATE TABLE Usuarios (
     Id_Usuarios INT AUTO_INCREMENT PRIMARY KEY,
-    Contraseña_U VARCHAR(15),
-    Correo_U     VARCHAR(30),
+    Contraseña_U VARCHAR (15)
+);
+----------------------------------------------------------------
+CREATE TABLE Roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
 );
 
-CREATE PROCEDURE AsignarTipoUsuario
-    @Id_Usuario INT,
+
+----------------------------------------------------------------------------------------
+CREATE PROCEDURE AsignarTipoUsuario;
+    @Id_Usuarios INT,
     @Rol VARCHAR(20)
 AS
 BEGIN
@@ -30,6 +36,7 @@ BEGIN
         Id_Organizador = CASE WHEN @TipoUsuario = 4 THEN @Id_Usuario ELSE NULL END
     WHERE Id_Usuarios = @Id_Usuario
 END
+---------------------------------------------------------------------------------------------
 
 CREATE TABLE Carrera (
     Id_Carrera INT PRIMARY KEY,
@@ -43,6 +50,7 @@ CREATE TABLE Carrera (
 
 CREATE TABLE Ciclista (
     Id_Ciclista INT PRIMARY KEY,
+    
     Fecha_Nacimiento_C DATE,
     Nombre_C VARCHAR(30),
     Ap_Ciclista VARCHAR(30),
@@ -52,6 +60,7 @@ CREATE TABLE Ciclista (
     Expertos_C VARCHAR(20),
     Avanzados_ VARCHAR(20),
     Intermedios_C VARCHAR(20)
+    rol_id INT,
 );
 
 CREATE TABLE Estadisticas (
@@ -64,10 +73,12 @@ CREATE TABLE Estadisticas (
 
 CREATE TABLE Juez (
     Id_Juez INT PRIMARY KEY,
+    Contraseña_J Varchar(10),
     Nombre_Juez VARCHAR(20),
     Ap_Juez VARCHAR(20),
     Am_Juez VARCHAR(20),
     Tipo_Juez VARCHAR(30)
+    rol_id INT,
 );
 
 CREATE TABLE Administrativos (
@@ -76,14 +87,17 @@ CREATE TABLE Administrativos (
     Ap_Administrativo VARCHAR(30),
     Am_Administrativo VARCHAR(30),
     Departamento_A VARCHAR(20)
+    rol_id INT,
 );
 
 CREATE TABLE Organizador (
     Id_Organizador INT PRIMARY KEY,
+    
     Nombre_O VARCHAR(30),
     Ap_Organizador VARCHAR(30),
     Am_Organizador VARCHAR(30),
     Cargo_A VARCHAR(20)
+    rol_id INT,
 );
 
 CREATE TABLE Inscribe (
@@ -119,3 +133,9 @@ CREATE TABLE Registra (
     FOREIGN KEY (Id_Estadisticas) REFERENCES Estadisticas(Id_Estadisticas),
     FOREIGN KEY (Id_Juez) REFERENCES Juez(Id_Juez)
 );
+
+INSERT INTO Roles (nombre) VALUES
+('Ciclista'),
+('Organizador'),
+('Administrador'),
+('Juez');
