@@ -1,0 +1,81 @@
+.event-form-container {
+  width: 600px; /* Aumentar el ancho del formulario */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #000000; /* Fondo negro */
+  color: rgb(255, 158, 31); /* Texto blanco */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2.new-event {
+  color: #f8f5f3; /* Cambiar el color del texto a naranja */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #fffbfb; /* Fondo de input oscuro */
+  color: rgb(73, 71, 71); /* Texto de input blanco */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button.save-button {
+  background-color: #ee9117f3; 
+}
+
+button.save-button:hover {
+  background-color: #ffb20b;
+}
+
+
+button.edit-button {
+  background-color: #FFC107; /* Amarillo */
+  color: black; /* Texto negro para mejor contraste */
+}
+
+button.edit-button:hover {
+  background-color: #FFB300;
+}
+
+/* Nuevo contenedor para alinear los botones */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button.half-width {
+  width: 40%; /* Ajustar ancho de los botones a la mitad del contenedor */
+  align-self: flex-end; /* Alinear el botón al final del contenedor */
+  margin-left: auto;
+}

@@ -1,0 +1,115 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #010914;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+  }
+  
+  .loginLeft,
+  .loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .loginLogo {
+    font-size: 50px;
+    font-weight: 800;
+    color: #ee6617;
+    margin-bottom: 10px;
+  }
+  
+  .loginDesc {
+    font-size: 24px;
+    color: #f5f4f3d3;
+  }
+  
+  .loginBox{
+      height: 300px;
+      padding: 20px;
+      background-color: #f5f4f3d3;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  .loginInput {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #f5f4f3d3;
+    font-size: 18px;
+    padding-left: 20px;
+    background-color: transparent; /* Hacer el fondo transparente */
+    color: #130b0b; /* Color del texto */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .loginInput:focus {
+    outline: none;
+    background-color: rgba(245, 244, 243, 0.7); /* Fondo semi-transparente al enfocar */
+  }
+  
+  .loginButton{
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+      background-color: #ee6617;
+      color: #f5f4f3d3;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+  }
+  
+  .loginForgot{
+      text-align: center;
+      color: #f59d38;
+  }
+  
+  .loginRegisterButton{
+      width: 60%;
+      align-self: center;
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+      background-color: #f59d38;
+      color: rgb(80, 42, 42);
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 10%;
+    left: 47%;
+    width: 7px;
+    height: 80%;
+    background-color: #f5f4f3d3;
+    transform: translateX(-40%);
+  }
+
+  .loginLeft {
+    position: relative;
+  }
+  
+  .rutaImage {
+    position: absolute;
+    top: 50px; /* Ajusta según sea necesario */
+    left: 110px; /* Ajusta según sea necesario */
+    width: 150px; /* Ajusta según sea necesario */
+    height: auto; /* Esto mantiene la proporción de aspecto */
+  }
+  
+  
+  
